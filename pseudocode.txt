@@ -1,0 +1,53 @@
+Rock Paper Scissors
+
+player = prompt("Enter your choice (rock/paper/scissors): ") (switch to clickable buttons)
+computer = random_choice(["rock", "paper", "scissors"])
+result = compare(player, computer)
+print("You chose", player)
+print("Computer chose", computer)
+print(result)
+
+player choice function
+
+prompt input from player ("pick rock, paper, or scissors")
+return player choice to lowercase string
+
+spell check function
+
+if player choice is not rock, paper, or scissors
+    prompt player to pick rock, paper, or scissors again (loop)
+    prompt("choice" is invalid. Please pick rock, paper, or scissors)
+
+compare function
+
+if player == rock and computer == scissors
+    player wins
+if player == rock and computer == paper
+    computer wins
+if player == paper and computer == rock
+    player wins
+if player == paper and computer == scissors
+    computer wins
+if player == scissors and computer == paper
+    player wins
+if player == scissors and computer == rock
+    computer wins
+
+computer choice function
+
+switch case
+    random number between 1 and 3
+    case 1: return rock
+    case 2: return paper
+    case 3: return scissors
+
+output function
+
+alert results and console.log
+
+main function
+
+    call player choice function
+    call computer choice function
+    call spell check in a loop (will be similar to the player choice function)
+    call compare function
