@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let numOfRounds = 5;
 
 function getComputerChoice() {
     switch (Math.floor(Math.random() * 3 + 1)) {
@@ -12,8 +13,16 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    return prompt('Enter your choice: rock, paper, or scissors').toLowerCase();
+function getHumanChoice(round) {
+    choice = prompt(`Round Number ${round + 1}:
+    Enter your choice: rock, paper, or scissors`).toLowerCase();
+
+    if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
+        return choice;
+    } else {
+        alert('Invalid choice! Please enter rock, paper, or scissors.');
+        return getHumanChoice(round);
+    }
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -41,8 +50,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let humanChoice = getHumanChoice();
+    for (let round = 0; round < numOfRounds; round++) {
+        let humanChoice = getHumanChoice(round);
         let computerChoice = getComputerChoice();
         let result = playRound(humanChoice, computerChoice);
         console.log(result);
