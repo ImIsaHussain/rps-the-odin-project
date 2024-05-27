@@ -53,10 +53,6 @@ function roundResults(winner, playerScore, computerScore) {
     gameScore.textContent = `Player Score: ${playerScore} | Computer Score: ${computerScore}`;
 }
 
-function gameOver(winner) {
-
-}
-
 function playGame(choice) {
     let humanChoice = choice;
     let computerChoice = getComputerChoice();
