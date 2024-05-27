@@ -71,11 +71,26 @@ function playGame(choice) {
     if (humanScore == 5) {
         humanScore = 0;
         computerScore = 0;
+        showModal("YOU WON!")
         roundResults("YOU WON!", humanScore, computerScore);
     }
     if (computerScore == 5) {
         humanScore = 0;
         computerScore = 0;
+        showModal("COMPUTER WON!")
         roundResults("COMPUTER WON!", humanScore, computerScore);
+    }
+}
+
+function showModal(message) {
+    var modal = document.querySelector('#myModal');
+    var span = document.querySelector('.close');
+    var modalText = document.querySelector('#modalText');
+
+    modalText.textContent = message;
+    modal.style.display = "block";
+
+    span.onclick = function () {
+        modal.style.display = "none";
     }
 }
