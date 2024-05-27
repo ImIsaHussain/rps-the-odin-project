@@ -53,6 +53,10 @@ function roundResults(winner, playerScore, computerScore) {
     gameScore.textContent = `Player Score: ${playerScore} | Computer Score: ${computerScore}`;
 }
 
+function gameOver(winner) {
+
+}
+
 function playGame(choice) {
     let humanChoice = choice;
     let computerChoice = getComputerChoice();
@@ -68,11 +72,14 @@ function playGame(choice) {
         roundResults("It's a tie!", humanScore, computerScore);
     }
 
-    if (humanScore > computerScore) {
-        alert('Human wins the game!');
-    } else if (humanScore < computerScore) {
-        alert('Computer wins the game!');
-    } else {
-        alert('It\'s a tie!');
+    if (humanScore == 5) {
+        humanScore = 0;
+        computerScore = 0;
+        roundResults("YOU WON!", humanScore, computerScore);
+    }
+    if (computerScore == 5) {
+        humanScore = 0;
+        computerScore = 0;
+        roundResults("COMPUTER WON!", humanScore, computerScore);
     }
 }
